@@ -1,0 +1,9 @@
+DELIMITER //
+CREATE PROCEDURE CancelOrder(IN OrderID_input VARCHAR(50))
+BEGIN
+DELETE FROM Orders WHERE OrderID = OrderID_input;
+END//
+
+CALL CancelOrder('00-465-7031');
+
+SELECT * FROM Orders WHERE OrderID = '00-465-7031';
